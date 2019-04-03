@@ -4,9 +4,9 @@
 - Java8 full: (Dagger+Gson+DynamoDB): **3.9 sec**
 - Java8 Micronaut 1.1.0-RC2 (DynamoDB): **5.8 sec**
 
-Below you can see the X-Ray for each example.
-Initialization (light blue): This is code initialization (Static blocks + Constructor)
-After initialization (dark blue): This is the function handler code
+Below you can see the X-Ray for each example.  
+*Initialization (light blue)*: This is code initialization (Static blocks + Constructor)  
+*After initialization (dark blue)*: This is the function handler code
 
 ### Java 8 - minimal - 1024 MB
 ![Java 8 - minimal ](./images/java8-minimal-xray.png)

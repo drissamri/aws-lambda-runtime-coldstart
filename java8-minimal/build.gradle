@@ -1,0 +1,38 @@
+import static org.gradle.api.JavaVersion.VERSION_1_8
+
+plugins {
+    id 'java'
+    id 'net.ltgt.apt-idea' version "0.21"
+}
+
+ext {
+    sourceCompatibility = VERSION_1_8
+    targetCompatibility = VERSION_1_8
+    daggerVersion = '2.21'
+}
+
+group 'be.drissamri'
+version '1.0.0'
+
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    annotationProcessor  "com.google.dagger:dagger-compiler:${daggerVersion}"
+    compile "com.google.dagger:dagger:${daggerVersion}"
+    compile group: 'com.amazonaws', name: 'aws-lambda-java-core', version:'1.2.0'
+    compile group: 'com.amazonaws', name: 'aws-lambda-java-events', version: '2.2.6'
+}
+
+task buildZip(type: Zip) {
+    from compileJava
+    from processResources
+    into('lib') {
+        from configurations.compileClasspath
+    }
+}
+
+build.dependsOn buildZip

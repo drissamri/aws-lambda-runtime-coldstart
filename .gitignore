@@ -1,0 +1,9 @@
+.gradle
+.idea
+.DS_Store
+java8-minimal/build
+java8-minimal/out
+*.iml
+java8-minimal/.serverless
+.serverless
+build/

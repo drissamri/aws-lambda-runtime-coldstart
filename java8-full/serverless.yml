@@ -1,0 +1,50 @@
+service: java8-full-performance
+
+provider:
+  name: aws
+  region: eu-west-1
+  tracing:
+    lambda: true
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+      Resource:
+        - !GetAtt ProductsTable.Arn
+
+custom:
+  defaultArtifact: build/distributions/java8-full-1.0.0.zip
+
+package:
+  artifact: ${opt:artifact, self:custom.defaultArtifact}
+
+functions:
+  add-product:
+    handler: be.drissamri.performance.LambdaFunction
+    runtime: java8
+    memorySize: 1024
+    events:
+      - http:
+          path: /product
+          method: post
+
+resources:
+  Resources:
+    ProductsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: products
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: name
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+          - AttributeName: name
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

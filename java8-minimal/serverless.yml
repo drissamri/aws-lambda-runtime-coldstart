@@ -1,0 +1,24 @@
+service: java8-minimal-performance
+
+provider:
+  name: aws
+  region: eu-west-1
+  tracing:
+    lambda: true
+
+custom:
+  defaultArtifact: build/distributions/java8-minimal-1.0.0.zip
+
+package:
+  artifact: ${opt:artifact, self:custom.defaultArtifact}
+
+functions:
+  ping:
+    name: ${self:service}-ping-${self:provider.stage}
+    handler: be.drissamri.performance.LambdaFunction
+    runtime: java8
+    memorySize: 1024
+    events:
+      - http:
+          path: /ping
+          method: get

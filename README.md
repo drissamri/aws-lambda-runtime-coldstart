@@ -5,7 +5,7 @@
 
 **_CloudWatch_**
 ```
-REPORT Duration: 155.22 ms	Billed Duration: 200 ms Memory Size: 1024 MB	Max Memory Used: 88 MB**
+REPORT Duration: 155.22 ms  Billed Duration: 200 ms  Memory Size: 1024 MB	Max Memory Used: 88 MB
 ```
 
 ## Java 8 - full - 1024 MB
@@ -19,6 +19,6 @@ REPORT Duration: 155.22 ms	Billed Duration: 200 ms Memory Size: 1024 MB	Max Memo
 **_CloudWatch_**
 
 ```
-REPORT Duration: 2170.02 ms	Billed Duration: 2200 ms Memory Size: 1024 MB	Max Memory Used: 158 MB	
+REPORT Duration: 2170.02 ms  Billed Duration: 2200 ms  Memory Size: 1024 MB	Max Memory Used: 158 MB	
 ```
 

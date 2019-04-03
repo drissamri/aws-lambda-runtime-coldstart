@@ -1,8 +1,8 @@
 # AWS Lambda - Coldstart comparison
 
-- Java8 minimal: 828 ms
-- Java8 full: (Dagger+Gson+DynamoDB): 3.9 sec
-- Java8 Micronaut 1.1.0-RC2 (DynamoDB): 5.8 sec
+- Java8 minimal: **828 ms**
+- Java8 full: (Dagger+Gson+DynamoDB): **3.9 sec**
+- Java8 Micronaut 1.1.0-RC2 (DynamoDB): **5.8 sec**
 
 ###Java 8 - minimal - 1024 MB
 ![Java 8 - minimal ](./images/java8-minimal-xray.png)

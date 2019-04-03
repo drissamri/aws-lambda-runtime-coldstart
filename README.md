@@ -26,7 +26,6 @@ REPORT Duration: 155.22 ms  Billed Duration: 200 ms  Memory Size: 1024 MB  Max M
 - AWS SDK 2: url-connection-client (faster starting HTTP client)
 
 **_CloudWatch_**
-
 ```
 REPORT Duration: 2170.02 ms  Billed Duration: 2200 ms  Memory Size: 1024 MB  Max Memory Used: 158 MB	
 ```
@@ -39,6 +38,7 @@ REPORT Duration: 2170.02 ms  Billed Duration: 2200 ms  Memory Size: 1024 MB  Max
 
 ![Java 8 - minimal ](./images/java8-micronaut-xray.png)
 
+**_CloudWatch_**
 ```
 REPORT Duration: 3399.12 ms  Billed Duration: 3400 ms  Memory Size: 1024 MB  Max Memory Used: 175 MB	
 ```

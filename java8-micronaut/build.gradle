@@ -23,8 +23,6 @@ dependencies {
     annotationProcessor "io.micronaut:micronaut-validation:1.1.0.RC2"
 
     compile "io.micronaut.aws:micronaut-function-aws-api-proxy"
-    compile "io.micronaut:micronaut-http-client"
-    compile "io.micronaut:micronaut-http-server-netty"
     compile "io.micronaut:micronaut-inject"
     compile "io.micronaut:micronaut-validation"
     compile "io.micronaut:micronaut-runtime"
@@ -32,8 +30,7 @@ dependencies {
     // AWS SDK 2.0
     compile group: 'software.amazon.awssdk', name: 'dynamodb', version: "2.5.21"
     compile group: 'software.amazon.awssdk', name: 'url-connection-client', version: "2.5.21"
-    
-    runtime "ch.qos.logback:logback-classic:1.2.3"
+
     runtime "org.apache.logging.log4j:log4j-core:2.8.2"
     runtime "org.apache.logging.log4j:log4j-api:2.8.2"
     runtime "org.apache.logging.log4j:log4j-slf4j-impl:2.8.2"

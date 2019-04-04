@@ -8,3 +8,4 @@ java8-minimal/.serverless
 .serverless
 build/
 target/
+out/

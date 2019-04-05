@@ -2,7 +2,7 @@
 
 - Java8 minimal: **828 ms**
 - Java8 full: (Dagger+Gson+DynamoDB): **3.9 sec**
-- Java8 Micronaut 1.1.0-RC2 (DynamoDB): **5.3 sec**
+- Java8 Micronaut 1.1.0-RC2 (DynamoDB): **5.3 sec** (WIP: Improvements possible and this is the non-GraalVM example)
 - nodejs8 full (DynamoDB): **540 ms**
 
 Below you can see the X-Ray for each example.  

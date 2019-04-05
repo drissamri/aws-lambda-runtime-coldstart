@@ -3,6 +3,7 @@
 - Java8 minimal: **828 ms**
 - Java8 full: (Dagger+Gson+DynamoDB): **3.9 sec**
 - Java8 Micronaut 1.1.0-RC2 (DynamoDB): **5.3 sec**
+- nodejs8 full (DynamoDB): **540 ms**
 
 Below you can see the X-Ray for each example.  
 *Initialization (light blue)*: This is code initialization (Static blocks + Constructor)  
@@ -42,3 +43,16 @@ REPORT Duration: 2170.02 ms  Billed Duration: 2200 ms  Memory Size: 1024 MB  Max
 ```
 REPORT Duration: 3210.99 ms  Billed Duration: 3300 ms  Memory Size: 1024 MB  Max Memory Used: 172 MB	
 ```
+
+### nodejs 8 - full - 1024 MB
+
+- TypeScript
+- Webpack
+- DynamoDB
+
+**_CloudWatch_**
+```
+REPORT Duration: 69.36 ms  Billed Duration: 100 ms  Memory Size: 1024 MB  Max Memory Used: 106 MB	
+```
+
+![nodejs 8 - full ](./images/nodejs8-full-xray.png)

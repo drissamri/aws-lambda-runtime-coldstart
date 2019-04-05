@@ -1,0 +1,42 @@
+{
+  "name": "typescript-examples",
+  "version": "1.0.0",
+  "description": "TypeScript AWS Lambda examples",
+  "main": "handler.js",
+  "scripts": {
+    "analyse": "npm run lint && npm run test",
+    "clean": "rimraf .serverless coverage",
+    "build": "serverless package",
+    "predeploy": "npm run clean && npm run analyse",
+    "deploy": "serverless deploy",
+    "start": "serverless offline start",
+    "test": "jest --watchAll --colors --coverage",
+    "test:ci": "jest --ci --colors --coverage --passWithNoTests",
+    "invoke:local": "serverless invoke local --function create-product --path event.json -l",
+    "invoke": "serverless invoke --function create-product --path event.json -l",
+    "lint": "tslint --project tsconfig.json **/*.ts"
+  },
+  "dependencies": {
+    "@middy/core": "1.0.0-alpha.28",
+    "@middy/http-event-normalizer": "1.0.0-alpha.28"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.23",
+    "@types/node": "8.10.45",
+    "rimraf": "^2.6.3",
+    "@types/jest": "24.0.11",
+    "jest": "24.3.1",
+    "serverless": "1.40.0",
+    "serverless-offline": "4.9.3",
+    "serverless-webpack": "5.2.0",
+    "source-map-support": "0.5.11",
+    "ts-jest": "24.0.1",
+    "ts-loader": "5.3.3",
+    "tslint": "5.13.1",
+    "tslint-config-airbnb": "5.11.1",
+    "typescript": "3.3.4000",
+    "webpack": "5.0.0-alpha.11"
+  },
+  "author": "Driss Amri",
+  "license": "MIT"
+}

@@ -9,3 +9,4 @@ java8-minimal/.serverless
 build/
 target/
 out/
+nodejs8-full/node_modules

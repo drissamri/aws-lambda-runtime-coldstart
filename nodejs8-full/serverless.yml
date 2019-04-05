@@ -1,0 +1,37 @@
+service: nodejs8-full-performance
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+
+custom:
+  tableName: products
+
+provider:
+  name: aws
+  region: eu-west-1
+  tracing:
+    lambda: true
+
+  environment:
+    DYNAMODB_TABLE: ${self:custom.tableName}
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+      Resource:
+        - !GetAtt ProductsTable.Arn
+
+functions:
+  create-product:
+    handler: src/create-product/index.handler
+    memorySize: 1024
+    runtime: nodejs8.10
+    events:
+      - http:
+          method: post
+          path: /product
+
+resources:
+  - ${file(serverless/dynamodb.yml)}

@@ -1,0 +1,60 @@
+service: java8-quarkus-performance
+frameworkVersion: ">=1.42.3"
+
+plugins:
+  - serverless-domain-manager
+
+provider:
+  name: aws
+  stage: dev
+  region: eu-west-1
+  tracing:
+    apiGateway: true
+    lambda: true
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+      Resource:
+        - !GetAtt ProductsTable.Arn
+
+custom:
+  type: ${opt:type, 'java'}
+
+  customDomain:
+    domainName: 'api.drissamri.com'
+    basePath: quarkus-${self:custom.type}
+    createRoute53Record: false
+
+package:
+  artifact: target/function-${self:custom.type}/java8-quarkus-1.0-SNAPSHOT.zip
+
+functions:
+  hello:
+    runtime: provided
+    handler: Handler
+    events:
+      - http:
+          method: POST
+          path: /product
+
+resources:
+  Resources:
+    ProductsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: quarkus-native-products
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: name
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+          - AttributeName: name
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

@@ -27,7 +27,7 @@ functions:
   create-product:
     handler: src/create-product/index.handler
     memorySize: 1024
-    runtime: nodejs8.10
+    runtime: nodejs10.x
     events:
       - http:
           method: post

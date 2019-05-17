@@ -17,16 +17,16 @@
     "lint": "tslint --project tsconfig.json **/*.ts"
   },
   "dependencies": {
-    "@middy/core": "1.0.0-alpha.28",
-    "@middy/http-event-normalizer": "1.0.0-alpha.28"
+    "@middy/core": "1.0.0-alpha.30",
+    "@middy/http-event-normalizer": "1.0.0-alpha.30"
   },
   "devDependencies": {
-    "@types/aws-lambda": "8.10.23",
-    "@types/node": "8.10.45",
+    "@types/aws-lambda": "8.10.25",
+    "@types/node": "8.10.48",
     "rimraf": "^2.6.3",
     "@types/jest": "24.0.11",
     "jest": "24.3.1",
-    "serverless": "1.40.0",
+    "serverless": "1.42.3",
     "serverless-offline": "4.9.3",
     "serverless-webpack": "5.2.0",
     "source-map-support": "0.5.11",

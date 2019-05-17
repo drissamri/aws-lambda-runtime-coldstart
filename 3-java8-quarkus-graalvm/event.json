@@ -1,0 +1,29 @@
+{
+  "body": "qsdfqsdfqsdfqsdfsdqf",
+  "resource": "/{proxy+}",
+  "path": "/products",
+  "httpMethod": "POST",
+  "isBase64Encoded": true,
+  "queryStringParameters": {
+    "firstname": "Hello",
+    "lastname": "World"
+  },
+  "pathParameters": {
+    "proxy": "/products"
+  },
+  "stageVariables": {
+    "baz": "qux"
+  },
+  "headers": {},
+  "requestContext": {
+    "accountId": "123456789",
+    "resourceId": "123456789",
+    "stage": "prod",
+    "requestId": "03b29550-0c47-4bdd-b8fa-0c589573e63e",
+    "identity": {},
+    "path": "/products",
+    "resourcePath": "/{proxy+}",
+    "httpMethod": "POST",
+    "apiId": "123456789"
+  }
+}

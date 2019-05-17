@@ -1,0 +1,12 @@
+{
+  "version": "1.0.0",
+  "description": "AWS Lambda Coldstart comparison - Quarkus",
+  "scripts": {},
+  "dependencies": {},
+  "devDependencies": {
+    "serverless": "1.42.3",
+    "serverless-domain-manager": "2.6.13"
+  },
+  "author": "Driss Amri",
+  "license": "MIT"
+}

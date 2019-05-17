@@ -4,13 +4,13 @@ MINIMAL = No external integrations
 FULL = Integration w/ DynamoDB
 
 MINIMAL:
-- Java8: **828 ms**
-- Java8 Quarkus: **379 ms**
+- Java8 - Dagger+Gson: **828 ms**
+- Java8 - Quarkus - GraalVM: **379 ms**
 
 FULL:
-- nodejs8: **540 ms**
-- Java8 Dagger+Gson: **3.9 sec**
-- Java8 Micronaut: **5.3 sec**
+- nodejs - Middy: **540 ms**
+- Java8 - Dagger+Gson: **3.9 sec**
+- Java8 - Micronaut: **5.3 sec**
 
 Below you can see the X-Ray for each example.  
 **Initialization (light blue)**: This is code initialization (Static blocks + Constructor)  

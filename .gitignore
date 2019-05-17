@@ -10,3 +10,4 @@ build/
 target/
 out/
 nodejs8-full/node_modules
+node_modules/

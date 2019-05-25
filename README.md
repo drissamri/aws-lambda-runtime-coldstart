@@ -6,7 +6,7 @@ FULL = Integration w/ DynamoDB
 MINIMAL:
 - Java8 - Dagger+Gson: **828 ms**
 - Java8 - Quarkus - GraalVM: **379 ms**
-
+   
 FULL:
 - nodejs - Middy: **540 ms**
 - Java8 - Dagger+Gson: **3.9 sec**

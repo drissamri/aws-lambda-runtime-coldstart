@@ -1,0 +1,48 @@
+service: java8-spring-performance
+
+provider:
+  name: aws
+  region: eu-west-1
+  tracing:
+    lambda: true
+
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:PutItem
+      Resource:
+        - !GetAtt ProductsTable.Arn
+
+package:
+  artifact: target/serverless-spring-0.0.1-SNAPSHOT-aws.jar
+
+functions:
+  add-product:
+    handler: org.springframework.cloud.function.adapter.aws.SpringBootApiGatewayRequestHandler
+
+    runtime: java8
+    memorySize: 1024
+    events:
+      - http:
+          path: /
+          method: POST
+
+resources:
+  Resources:
+    ProductsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: products
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeName: name
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+          - AttributeName: name
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1

@@ -22,7 +22,6 @@ public class ServerlessSpringApplication
         FunctionalSpringApplication.run(ServerlessSpringApplication.class, args);
     }
 
-    @Bean
     public Function<ProductRequest, Product> addProduct() {
         return value -> {
             final Product product = new Product(UUID.randomUUID().toString(), value.getName());

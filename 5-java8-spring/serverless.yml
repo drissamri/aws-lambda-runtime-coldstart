@@ -18,8 +18,7 @@ package:
 
 functions:
   add-product:
-    handler: org.springframework.cloud.function.adapter.aws.SpringBootApiGatewayRequestHandler
-
+    handler: be.drissamri.serverlessspring.lambda.AwsLambdaHandler
     runtime: java8
     memorySize: 1024
     events:
